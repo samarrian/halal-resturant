@@ -1,6 +1,11 @@
-import { Button } from "@/components/ui/button"
+import Test from "./test"
 
-export function App() {
-  return <div>samar</div>
+function App() {
+  return (
+    <div>
+      samar rian
+      <Test />
+    </div>
+  )
 }
 export default App
