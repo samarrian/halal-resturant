@@ -1,11 +1,6 @@
-import Test from "./test"
+import Layout from "./layout"
 
 function App() {
-  return (
-    <div>
-      samar rian
-      <Test />
-    </div>
-  )
+  return <Layout></Layout>
 }
 export default App
