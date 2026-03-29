@@ -1,7 +1,6 @@
-import { SearchIcon } from "lucide-react"
+import { LocationEditIcon, SearchIcon } from "lucide-react"
 import { useId } from "react"
 
-import Logo from "@/components/logo"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import {
@@ -16,11 +15,10 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 
-// Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
-  { href: "#", label: "Products" },
-  { href: "#", label: "Categories" },
-  { href: "#", label: "Deals" },
+  { href: "#", label: "Discover" },
+  { href: "#", label: "Favorites" },
+  { href: "#", label: "Recents" },
 ]
 
 export default function Navbar() {
@@ -76,35 +74,10 @@ export default function Navbar() {
                       </NavigationMenuLink>
                     </NavigationMenuItem>
                   ))}
-                  <NavigationMenuItem
-                    aria-hidden="true"
-                    className="w-full"
-                    role="presentation"
-                  >
-                    <div
-                      aria-orientation="horizontal"
-                      className="-mx-1 my-1 h-px bg-border"
-                      role="separator"
-                      tabIndex={-1}
-                    />
-                  </NavigationMenuItem>
+
                   <NavigationMenuItem className="w-full">
-                    <NavigationMenuLink className="py-1.5" href="#">
-                      Sign In
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem className="w-full">
-                    <Button
-                      asChild
-                      className="mt-0.5 w-full text-left text-sm"
-                      size="sm"
-                    >
-                      <span className="flex items-baseline gap-2">
-                        Cart
-                        <span className="text-xs text-primary-foreground/60">
-                          2
-                        </span>
-                      </span>
+                    <Button className="text-sm" size="sm" variant="default">
+                      <LocationEditIcon /> <span>Near me</span>
                     </Button>
                   </NavigationMenuItem>
                 </NavigationMenuList>
@@ -113,8 +86,11 @@ export default function Navbar() {
           </Popover>
           {/* Main nav */}
           <div className="flex flex-1 items-center gap-6 max-md:justify-between">
-            <a className="text-primary hover:text-primary/90" href="#">
-              <Logo />
+            <a
+              className="text-2xl font-semibold text-primary hover:text-primary/90"
+              href="#"
+            >
+              Verdant Halal
             </a>
             {/* Navigation menu */}
             <NavigationMenu className="max-md:hidden">
@@ -147,16 +123,8 @@ export default function Navbar() {
         </div>
         {/* Right side */}
         <div className="flex items-center gap-2 max-md:hidden">
-          <Button asChild className="text-sm" size="sm" variant="ghost">
-            <a href="#">Sign In</a>
-          </Button>
-          <Button asChild className="text-sm" size="sm">
-            <a href="#">
-              <span className="flex items-baseline gap-2">
-                Cart
-                <span className="text-xs text-primary-foreground/60">2</span>
-              </span>
-            </a>
+          <Button className="text-sm" size="sm" variant="default">
+            <LocationEditIcon /> <span>Near me</span>
           </Button>
         </div>
       </div>
